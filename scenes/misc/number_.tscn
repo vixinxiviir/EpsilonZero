@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://1n6h8vqew3k3"]
+
+[ext_resource type="Script" uid="uid://fcgx82svsmwn" path="res://scenes/misc/number_.gd" id="1_w8nrs"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ra8ng"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1yux5"]
+
+[node name="number_2" type="RigidBody3D" unique_id=1899418654 groups=["interactable"]]
+script = ExtResource("1_w8nrs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1195685480]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("BoxMesh_ra8ng")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1532756404]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+shape = SubResource("BoxShape3D_1yux5")
