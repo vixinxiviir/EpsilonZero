@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1n6h8vqew3k3"]
 
-[ext_resource type="Script" uid="uid://fcgx82svsmwn" path="res://scenes/misc/number_.gd" id="1_w8nrs"]
+[ext_resource type="Script" uid="uid://fcgx82svsmwn" path="res://scripts/puzzles/number_.gd" id="1_w8nrs"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ra8ng"]
 

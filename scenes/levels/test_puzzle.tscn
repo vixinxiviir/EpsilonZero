@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cjkejm3no6m0q"]
 
 [ext_resource type="PackedScene" uid="uid://ccplhsy1vntrp" path="res://assets/models/primitives/wallSection01.glb" id="1_1naao"]
-[ext_resource type="Script" uid="uid://dr1d0a65lfnpr" path="res://scenes/levels/test_puzzle.gd" id="1_hwi3k"]
+[ext_resource type="Script" uid="uid://dr1d0a65lfnpr" path="res://scripts/puzzles/test_puzzle.gd" id="1_hwi3k"]
 [ext_resource type="PackedScene" uid="uid://cw6hjeg6pvrc6" path="res://assets/models/primitives/floor_tile_01.glb" id="3_2n1ni"]
 [ext_resource type="PackedScene" uid="uid://cptbdoiuwxbyo" path="res://assets/models/primitives/panel01.glb" id="4_suwbp"]
 [ext_resource type="PackedScene" uid="uid://mkkg7q1utwnw" path="res://assets/models/primitives/pedestal01.glb" id="5_hwi3k"]
