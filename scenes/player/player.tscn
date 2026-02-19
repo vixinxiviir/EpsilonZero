@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://x6fv2poa3m8e"]
 
 [ext_resource type="Script" uid="uid://86ndt4todtc3" path="res://scripts/player/player_movement.gd" id="1_8afob"]
+[ext_resource type="Script" uid="uid://dxpwg8anjbln6" path="res://scripts/player/player_interaction.gd" id="2_dovo2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_shgpb"]
 
@@ -18,3 +19,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 [node name="RayCast3D" type="RayCast3D" parent="head" unique_id=1831325562]
 target_position = Vector3(0, 0, -2)
 collision_mask = 5
+
+[node name="interactionController" type="Node3D" parent="." unique_id=848805757]
+script = ExtResource("2_dovo2")

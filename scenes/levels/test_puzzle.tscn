@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://cjkejm3no6m0q"]
 
 [ext_resource type="PackedScene" uid="uid://ccplhsy1vntrp" path="res://assets/models/primitives/wallSection01.glb" id="1_1naao"]
-[ext_resource type="Script" uid="uid://dr1d0a65lfnpr" path="res://scripts/puzzles/test_puzzle.gd" id="1_hwi3k"]
+[ext_resource type="Script" uid="uid://dr1d0a65lfnpr" path="res://scripts/puzzles/level_setup.gd" id="1_hwi3k"]
 [ext_resource type="PackedScene" uid="uid://cw6hjeg6pvrc6" path="res://assets/models/primitives/floor_tile_01.glb" id="3_2n1ni"]
+[ext_resource type="Script" uid="uid://pdivq7wlxt4j" path="res://scripts/environment/door.gd" id="3_4ejm5"]
 [ext_resource type="PackedScene" uid="uid://cptbdoiuwxbyo" path="res://assets/models/primitives/panel01.glb" id="4_suwbp"]
+[ext_resource type="Script" uid="uid://cw2t85ped3h3s" path="res://scripts/puzzles/puzzle_panel.gd" id="5_4ejm5"]
 [ext_resource type="PackedScene" uid="uid://mkkg7q1utwnw" path="res://assets/models/primitives/pedestal01.glb" id="5_hwi3k"]
 [ext_resource type="PackedScene" uid="uid://x6fv2poa3m8e" path="res://scenes/player/player.tscn" id="6_1t1ff"]
 [ext_resource type="PackedScene" uid="uid://1n6h8vqew3k3" path="res://scenes/misc/number_.tscn" id="6_suwbp"]
@@ -13,12 +15,10 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x3ka1"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_suwbp"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hwi3k"]
-
 [node name="TestPuzzle" type="Node3D" unique_id=2135528893]
 script = ExtResource("1_hwi3k")
+puzzlePanelPath = NodePath("panels/panel01/PuzzlePanel")
+doorPath = NodePath("doors/door01")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=754738852]
 
@@ -90,6 +90,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -5)
 
 [node name="door01" parent="doors" unique_id=846188464 groups=["world_geometry"] instance=ExtResource("1_1naao")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -5, 0, 0)
+script = ExtResource("3_4ejm5")
 
 [node name="floor" type="Node3D" parent="." unique_id=490958338]
 
@@ -113,6 +114,10 @@ pixel_size = 0.002
 modulate = Color(0.70792013, 0.25439346, 0.694999, 1)
 text = "2 <> 2 : ?"
 font_size = 64
+
+[node name="PuzzlePanel" type="Node3D" parent="panels/panel01" unique_id=1089022365]
+script = ExtResource("5_4ejm5")
+correctAnswer = "number_4"
 
 [node name="pedestals" type="Node3D" parent="." unique_id=1011210179]
 
@@ -159,20 +164,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 1.25, 0.25)
 collision_mask = 5
 can_sleep = false
 
-[node name="player" parent="." unique_id=674035508 instance=ExtResource("6_1t1ff")]
+[node name="player" parent="." unique_id=674035508 groups=["player"] instance=ExtResource("6_1t1ff")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.75, -0.25, 0)
 collision_layer = 2
 
 [node name="WorldEnvironment" parent="." unique_id=1963483063 instance=ExtResource("7_2n1ni")]
-
-[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=853749650]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.625, 4.875, 0.125)
-collision_layer = 4
-collision_mask = 5
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=700055199]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, -0.41666675, 0, 0.41666663)
-mesh = SubResource("BoxMesh_suwbp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1551533825]
-shape = SubResource("BoxShape3D_hwi3k")
