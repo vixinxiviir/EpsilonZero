@@ -59,7 +59,7 @@ func handle_interaction():
 	else:
 		var dropPosition = heldObject.global_position
 		heldObject.collision_layer = 4  # Object is on layer 3 (bit value 4)
-		heldObject.collision_mask = 1
+		heldObject.collision_mask = 1 + 4
 		heldObject.reparent(numberContainer)
 		heldObject.global_position = dropPosition
 		heldObject.gravity_scale = 1 
