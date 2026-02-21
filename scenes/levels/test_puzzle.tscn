@@ -91,6 +91,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -5)
 [node name="door01" parent="doors" unique_id=846188464 groups=["world_geometry"] instance=ExtResource("1_1naao")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -5, 0, 0)
 script = ExtResource("3_4ejm5")
+slide_direction = Vector3(0, 3, 0)
 
 [node name="floor" type="Node3D" parent="." unique_id=490958338]
 

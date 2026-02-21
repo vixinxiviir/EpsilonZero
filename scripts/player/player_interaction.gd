@@ -6,7 +6,7 @@ signal interact_pressed(target_object, held_object)
 @onready var player = get_parent()  # The CharacterBody3D player
 @onready var head = player.get_node("head")
 @onready var raycast = head.get_node("RayCast3D")
-@onready var numberContainer = get_tree().current_scene.get_node("numberObjects")
+#@onready var numberContainer = get_tree().current_scene.get_node("numberObjects")
 
 # Interaction state
 var heldObject = null
@@ -58,7 +58,7 @@ func drop_object():
 		return
 	
 	var dropPosition = heldObject.global_position
-	heldObject.reparent(numberContainer)
+	#heldObject.reparent(numberContainer)
 	heldObject.global_position = dropPosition
 	heldObject.collision_layer = 4  # Back to layer 3
 	heldObject.collision_mask = 1 + 4  # Detects world AND other objects

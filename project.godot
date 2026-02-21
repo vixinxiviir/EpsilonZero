@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Epsilon Zero"
-run/main_scene="uid://cjkejm3no6m0q"
+run/main_scene="uid://pup4dk6t6qjf"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
